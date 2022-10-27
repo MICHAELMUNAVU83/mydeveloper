@@ -8,10 +8,18 @@ function Devs() {
   useEffect(() => {
     dispatch(fetchDevelopers());
   }, [dispatch]);
-  console.log(developers);
+  const displayDevelopers = developers.map((developer) => (
+    <div key={developer.id}>
+      <p>{developer.name}</p>
+      <p>{developer.email}</p>
+      <p>{developer.stack}</p>
+    </div>
+  ));
+
   return (
     <div>
       Developers
+      {displayDevelopers}
       <Link to="/bookings">Bookings</Link>
     </div>
   );
