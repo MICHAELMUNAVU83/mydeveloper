@@ -13,14 +13,14 @@ function Bookings() {
   console.log(developers);
   console.log(bookings);
   const displayBookings =
-    bookings.lenth !== 0 ? (
+    bookings.length !== 0 ? (
       bookings.map((booking) => (
         <div key={booking.id}>
           <p>{booking.name}</p>
           {developers.map(
             (developer) =>
               developer.id === booking.developer_id && (
-                <p>For develloper: {developer.name}</p>
+                <p>For developer: {developer.name}</p>
               )
           )}
         </div>

@@ -13,6 +13,7 @@ function Devs() {
       <p>{developer.name}</p>
       <p>{developer.email}</p>
       <p>{developer.stack}</p>
+      <Link to={`/developers/${developer.id}`}>Show</Link>
     </div>
   ));
 
@@ -20,7 +21,7 @@ function Devs() {
     <div>
       Developers
       {displayDevelopers}
-      <Link to="/bookings">Bookings</Link>
+      <Link to="/bookings">My Booked Developers</Link>
     </div>
   );
 }
