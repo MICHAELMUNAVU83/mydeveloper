@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function About() {
   return (
     <div>
-      Abouttvybnbyghjk
+      About me
       <Link to="/devs">Devs</Link>
     </div>
   );
