@@ -16,7 +16,11 @@ export const fetchDevelopers = createAsyncThunk(
 export const developersSlice = createSlice({
   name: "developers",
   initialState,
-  reducers: {},
+  reducers: {
+    addADeveloper: (state, action) => {
+      state.developers.push(action.payload);
+    },
+  },
   extraReducers: {
     [fetchDevelopers.fulfilled]: (state, action) => {
       state.developers = action.payload;
@@ -25,3 +29,5 @@ export const developersSlice = createSlice({
 });
 
 export default developersSlice.reducer;
+
+export const { addADeveloper } = developersSlice.actions;

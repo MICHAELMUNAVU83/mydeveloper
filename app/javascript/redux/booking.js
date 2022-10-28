@@ -16,7 +16,11 @@ export const fetchBookings = createAsyncThunk(
 export const bookingsSlice = createSlice({
   name: "bookings",
   initialState,
-  reducers: {},
+  reducers: {
+    addABooking: (state, action) => {
+      state.bookings.push(action.payload);
+    },
+  },
   extraReducers: {
     [fetchBookings.fulfilled]: (state, action) => {
       state.bookings = action.payload;
@@ -25,3 +29,4 @@ export const bookingsSlice = createSlice({
 });
 
 export default bookingsSlice.reducer;
+export const { addABooking } = bookingsSlice.actions;
