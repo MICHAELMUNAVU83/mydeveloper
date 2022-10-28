@@ -9,7 +9,7 @@ function Bookings() {
   useEffect(() => {
     dispatch(fetchBookings());
     dispatch(fetchDevelopers());
-  }, [dispatch]);
+  }, []);
   console.log(developers);
   console.log(bookings);
   const displayBookings =
