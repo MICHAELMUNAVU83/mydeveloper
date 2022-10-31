@@ -4,11 +4,6 @@ class Api::V1::BookingsController < ApplicationController
         bookings = Booking.where(user_id: current_user.id)
         render json: bookings
     end
-    def new
-        booking = Booking.new
-        @booking.user_id = current_user.id
-    end
-
     def create
         booking = Booking.new(booking_params)
         booking.user_id = current_user.id

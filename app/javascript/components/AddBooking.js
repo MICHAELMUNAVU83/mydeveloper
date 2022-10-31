@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { fetchBookings } from "../redux/booking";
+import { current } from "@reduxjs/toolkit";
 function AddBooking() {
   const params = useParams();
   const devid = Number(params.id);
