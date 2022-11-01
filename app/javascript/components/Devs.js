@@ -24,8 +24,8 @@ function Devs() {
   return (
     <div>
       Developers
-      {displayDevelopers}
       <Link to="/bookings">My Booked Developers</Link>
+      {displayDevelopers}
       <input
         type="text"
         placeholder="name"

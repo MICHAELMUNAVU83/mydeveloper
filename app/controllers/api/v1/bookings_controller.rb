@@ -1,12 +1,11 @@
 class Api::V1::BookingsController < ApplicationController
-    protect_from_forgery with: :null_session
     def index
         bookings = Booking.where(user_id: current_user.id)
         render json: bookings
     end
     def create
         booking = Booking.new(booking_params)
-        booking.user_id = current_user.id
+        booking.user = current_user
         if booking.save
             render json: booking
         else
@@ -16,6 +15,6 @@ class Api::V1::BookingsController < ApplicationController
 
     private
     def booking_params
-        params.require(:booking).permit(:name , :developer_id)
+        params.require(:booking).permit(:name , :developer_id )
     end
 end
