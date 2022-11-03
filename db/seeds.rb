@@ -5,3 +5,43 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+users = User.create([
+    { 
+        email: "kim@gmail.com",
+        password: "123456",
+        password_confirmation: "123456"
+
+    },
+    {
+        email: "miki@gmail.com",
+        password: "123456",
+        password_confirmation: "123456"
+    }
+])
+
+developers = Developer.create([
+    {
+        name: "Kim",
+        email: "kimutai@gmail.com",
+        stack: "Ruby on Rails"
+    },
+    {
+        name: "Michael",
+        email: "michael@gmail.com",
+        stack: "React"
+    }
+])
+
+bookings = Booking.create([
+    {
+        name: "olive",
+        user: users.first,
+        developer: developers.first
+    },
+    {
+        name: "angeline",
+        user: users.last,
+        developer: developers.last
+    }
+])
+
